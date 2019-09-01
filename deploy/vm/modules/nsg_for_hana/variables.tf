@@ -14,12 +14,12 @@ variable "sap_instancenum" {
 }
 
 variable "sap_sid" {
-  default = "PV1"
+  default = "PR1"
 }
 
 variable "useHana2" {
   description = "If this is set to true, then, ports specifically for HANA 2.0 will be opened."
-  default     = false
+  default     = yes
 }
 
 locals {

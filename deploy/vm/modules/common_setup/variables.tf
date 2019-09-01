@@ -14,7 +14,7 @@ variable "sap_instancenum" {
 }
 
 variable "sap_sid" {
-  default = "P01"
+  default = "PR1"
 }
 
 variable "useHana2" {
