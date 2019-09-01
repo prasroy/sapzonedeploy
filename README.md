@@ -47,7 +47,7 @@ In this simple example, we'll deploy a simple single-node SAP HANA instance (spe
 2. Clone this repository:
 
     ```sh
-    git clone https://github.com/Azure/sap-hana.git
+    git clone https://github.com/prasroy/sapzonedeploy.git
     ```
 
 
