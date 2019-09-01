@@ -24,7 +24,7 @@ which run different roles to install and configure SAP HANA and required applica
 - Pacemaker high-availability cluster, fully configured with [SBD](# "STONITH by device") and SAP/Azure resource agents
 - deployed in Azure Availability Zones
 
-*(**Note**:please check if your region is available for Availability Zones
+***Note**:please check if your region is available for Availability Zones
 
 ## Usage
 
@@ -58,8 +58,8 @@ In this simple example, we'll deploy a simple single-node SAP HANA instance (spe
 
 | SWDC filename | Package name | OS | Version | Template parameter |
 | ------------- | ------------ | -- | ------- | ------------------ |
-| `SAPCAR_1110-80000935.EXE` | SAPCAR | Linux x86_64 | 7.21 | `url_sap_sapcar` |
-| `IMDB_SERVER100_122_17-10009569.SAR` | HANA DB Server | Linux x86_64 | 122.17 (SPS12) for HANA DB 1.00 | `url_sap_hdbserver` |
+| `SAPCAR_1211-80000935.EXE` | SAPCAR | Linux x86_64 | 7.21 | `url_sap_sapcar` |
+| `IMDB_SERVER20_036_0-80002031.SAR` | HANA DB Server | Linux x86_64 | 122.17 (SPS12) for HANA DB 1.00 | `url_sap_hdbserver` |
 
 *(**Note**: See the section on [**Required SAP Downloads**](#required-sap-downloads) for a full list of SAP packages, if you want to install additional applications on top of HANA, such as XSA.)*
 
@@ -85,10 +85,10 @@ In this simple example, we'll deploy a simple single-node SAP HANA instance (spe
 
     ```python
     # Azure region to deploy resource in; please choose the same region as your storage from step 3 (example: "westus2")
-    az_region = "westus2"
+    az_region = "westeurope"
 
     # Name of resource group to deploy (example: "demo1")
-    az_resource_group = "demo1"
+    az_resource_group = "sapdemo"
 
     # Unique domain name for easy VM access (example: "hana-on-azure1")
     az_domain_name = "hana-on-azure1"
@@ -110,10 +110,10 @@ In this simple example, we'll deploy a simple single-node SAP HANA instance (spe
     sshkey_path_private = "~/.ssh/id_rsa"
 
     # OS user with sudo privileges to be deployed on VM (e.g. "demo")
-    vm_user = "demo"
+    vm_user = "azureuser"
 
     # SAP system ID (SID) to be used for HANA installation (example: "HN1")
-    sap_sid = "HN1"
+    sap_sid = "PR1"
 
     # SAP instance number to be used for HANA installation (example: "01")
     sap_instancenum = "01"
@@ -245,12 +245,12 @@ Depending on your application requirements, you may need to download additional 
 
 | Name | OS | Version | SWDC filename | Scenario | Template parameter |
 | ---- | -- | ------- | ------------- | ---------| ------------------ |
-| SAPCAR | Linux x86_64 | 7.21 | `SAPCAR_1110-80000935.EXE` | All | `url_sap_sapcar` |
-| SAPCAR | Windows 64-bit | 7.21 | `SAPCAR_1110-80000938.EXE` | Windows bastion host | `url_sap_sapcar_win` |
-| SAP Host Agent | Linux x86_64 | 7.21 SP36 | `SAPHOSTAGENT36_36-20009394.SAR` | All | `url_sap_hostagent` |
+| SAPCAR | Linux x86_64 | 7.21 | `SAPCAR_1211-80000935.EXE` | All | `url_sap_sapcar` |
+| SAPCAR | Windows 64-bit | 7.21 | `sapcar_win.exe.EXE` | Windows bastion host | `url_sap_sapcar_win` |
+| SAP Host Agent | Linux x86_64 | 7.21 SP36 | `SAPHOSTAGENT42_42-20009394.SAR` | All | `url_sap_hostagent` |
 | HANA DB Server | Linux x86_64 | 122.17 (SPS12) for HANA DB 1.00 | `IMDB_SERVER100_122_17-10009569.SAR` | HANA 1.0 landscapes | `url_sap_hdbserver` |
-| HANA DB Server | Linux x86_64 | 2.00.32 for HANA DB 2.00 | `IMDB_SERVER20_032_0-80002031.SAR` | HANA 2.0 landscapes | `url_sap_hdbserver` |
-| HANA Studio | Windows 64-bit | 122.20 (SPS12) for HANA DB 1.00 | `IMC_STUDIO2_122_20-80000321.SAR` | Windows bastion host | `url_hana_studio` | 
+| HANA DB Server | Linux x86_64 | 2.00.32 for HANA DB 2.00 | `IMDB_SERVER20_036_0-80002031.SAR` | HANA 2.0 landscapes | `url_sap_hdbserver` |
+| HANA Studio | Windows 64-bit | 122.20 (SPS12) for HANA DB 1.00 | `IMC_STUDIO2_236_0-80000323.SAR` | Windows bastion host | `url_hana_studio` | 
 | XS Advanced Runtime | | SP00 Patch87 | `EXTAPPSER00P_87-70001316.SAR` | XSA | `url_xsa_runtime` |
 | DI Core | | SP12 Patch9 | `XSACDEVXDI12_9-70001255.ZIP` | XSA | `url_di_core` |
 | SAPUI5 | | SP52 Patch19 | `XSACUI5FESV452P_19-70003351.ZIP` | XSA | `url_sapui5` | 
