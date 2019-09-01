@@ -16,18 +16,18 @@ checkMountPointCorrectSize() {
 
 
 testLogDirCreated() {
-    checkDirectoryExists "/hana/log/PV1"
-    checkMountPointCorrectSize "/hana/log/PV1" "512G"
+    checkDirectoryExists "/hana/log/PR1"
+    checkMountPointCorrectSize "/hana/log/PR1" "512G"
 }
 
 testDataDirCreated() {
-    checkDirectoryExists "/hana/data/PV1"
-    checkMountPointCorrectSize "/hana/data/PV1" "512G"
+    checkDirectoryExists "/hana/data/PR1"
+    checkMountPointCorrectSize "/hana/data/PR1" "512G"
 }
 
 testSharedDirCreated() {
-    checkDirectoryExists "/hana/shared/PV1"
-    checkMountPointCorrectSize "/hana/shared/PV1" "512G"
+    checkDirectoryExists "/hana/shared/PR1"
+    checkMountPointCorrectSize "/hana/shared/PR1" "512G"
 }
 
 testDbSetup() {

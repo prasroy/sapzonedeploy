@@ -42,7 +42,7 @@ variable "public_ip_allocation_type" {
 }
 
 variable "sap_sid" {
-  default = "PV1"
+  default = "PR1"
 }
 
 variable "sshkey_path_public" {
