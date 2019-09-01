@@ -96,7 +96,7 @@ variable "sap_instancenum" {
 }
 
 variable "sap_sid" {
-  default = "PV1"
+  default = "PR1"
 }
 
 variable "sshkey_path_private" {
@@ -169,7 +169,7 @@ variable "url_xsa_runtime" {
 
 variable "useHana2" {
   description = "If this is set to true, then, ports specifically for HANA 2.0 will be opened."
-  default     = false
+  default     = true
 }
 
 variable "vm_size" {
