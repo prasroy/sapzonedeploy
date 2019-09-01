@@ -19,7 +19,7 @@ variable "sap_sid" {
 
 variable "useHana2" {
   description = "If this is set to true, then, ports specifically for HANA 2.0 will be opened."
-  default     = yes
+  default = true
 }
 
 locals {
